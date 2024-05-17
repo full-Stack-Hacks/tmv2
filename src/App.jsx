@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectInput from "./components/ProjectInput";
+import DashBoard from "./components/DashBoard";
 import Projects from "./components/Projects";
 import { ProjectProvider } from "./context/ProjectContext";
 
@@ -8,7 +8,7 @@ function App() {
     <ProjectProvider>
       <div className="evenSpacedFlexContainer outterContainer">
         <Projects />
-        <ProjectInput />
+        <DashBoard />
       </div>
     </ProjectProvider>
   );
