@@ -25,10 +25,22 @@ export const ProjectProvider = ({ children }) => {
     });
   };
 
+  const addTask = (title, id) => {
+    console.log("context");
+    dispatch({
+      type: "addTask",
+      payload: {
+        title,
+        id,
+      },
+    });
+  };
+
   return (
     <ProjectContext.Provider
       value={{
         addProject,
+        addTask,
         setSingleProject,
         singleProject: state.singleProject,
         projects: state.projects,

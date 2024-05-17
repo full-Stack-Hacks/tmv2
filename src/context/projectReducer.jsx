@@ -4,6 +4,7 @@ export const initialState = {
 };
 
 export const projectReducer = (state, action) => {
+  console.log("before switch");
   switch (action.type) {
     case "addProject": {
       return {
@@ -19,6 +20,21 @@ export const projectReducer = (state, action) => {
       return {
         ...state,
         singleProject: selectedProject[0],
+      };
+    }
+    case "addTask": {
+      console.log("hit case");
+      const updatedTodos = state.projects.map((elem) => {
+        if (elem.id === action.payload.id) {
+          return elem.tasks.push(action.payload.title);
+        } else {
+          return elem;
+        }
+      });
+      console.log(updatedTodos);
+      return {
+        ...state,
+        todos: updatedTodos,
       };
     }
   }

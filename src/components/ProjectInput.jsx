@@ -22,22 +22,57 @@ const ProjectInput = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="verticalFlexContainer">
-      <label htmlFor="title">Title</label>
-      <input type="text" id="title" name="title" />
-      <label htmlFor="startDate">Start Date</label>
-      <input type="date" id="startDate" name="startDate" />
-      <label htmlFor="endDate">End Date</label>
-      <input type="date" id="endDate" name="endDate" />
-      <label htmlFor="blurb">Blurb</label>
-      <textarea
-        id="blurb"
-        name="blurb"
-        rows="4"
-        cols="50"
-        placeholder="Enter your blurb here"
-      ></textarea>
-      <button type="submit">Submit</button> {/* Added a submit button */}
+    <form onSubmit={handleSubmit} className="formControl verticalFlexContainer">
+      <h2 className="titleMedium">Add Project</h2>
+      <div className="label-wrapper">
+        <label htmlFor="title" className="label-wrapper__label">
+          Title
+        </label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          className="label-wrapper__input"
+        />
+      </div>
+      <div className="label-wrapper">
+        <label htmlFor="startDate" className="label-wrapper__label">
+          Start Date
+        </label>
+        <input
+          type="date"
+          //   id="startDate"
+          name="startDate"
+          className="label-wrapper__input"
+        />
+      </div>
+      <div className="label-wrapper">
+        <label htmlFor="endDate" className="label-wrapper__label">
+          End Date
+        </label>
+        <input
+          type="date"
+          id="endDate"
+          name="endDate"
+          className="label-wrapper__input"
+        />
+      </div>
+      <div className="label-wrapper">
+        <label htmlFor="blurb" className="label-wrapper__label">
+          Blurb
+        </label>
+        <textarea
+          id="blurb"
+          name="blurb"
+          rows="4"
+          cols="50"
+          placeholder="Enter your blurb here"
+          className="label-wrapper__input"
+        ></textarea>
+      </div>
+      <button type="submit" className="submitButton">
+        Submit
+      </button>
     </form>
   );
 };

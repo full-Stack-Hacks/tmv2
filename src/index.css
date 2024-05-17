@@ -58,3 +58,148 @@
 .alignEnd {
   align-items: end;
 }
+
+.formControl {
+  border: 2px solid var(--blue);
+  padding: 2rem;
+}
+
+.formControl label {
+  font-size: 1.4em;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.formControl input[type="text"] {
+  border: none;
+  border-bottom: 1px solid var(--black);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.formControl input[type="text"]:focus {
+  outline: none;
+}
+
+.label-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.label-wrapper label {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.label-wrapper input[type="date"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.label-wrapper input[type="date"]:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.label-wrapper input[type="date"]::placeholder {
+  color: #ccc;
+}
+
+.formControl {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formControl.verticalFlexContainer {
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleMedium {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.label-wrapper {
+  margin-bottom: 20px;
+}
+
+.label-wrapper label {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.label-wrapper input[type="text"],
+.label-wrapper input[type="date"],
+.label-wrapper textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.label-wrapper input[type="text"]:focus,
+.label-wrapper input[type="date"]:focus,
+.label-wrapper textarea:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.submitButton {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #3e8e41;
+}
+
+.singleProject {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.singleProject h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.singleProject p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.singleProject .dates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.singleProject .dates p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
