@@ -24,7 +24,9 @@ const SingleProject = () => {
       </div>
       <TaskInput id={id} />
       {tasks.length > 0 &&
-        tasks.map((task) => <TaskItem {...task} key={task.id} />)}
+        tasks.map((task) => (
+          <TaskItem {...task} key={task.id} projectId={id} />
+        ))}
     </div>
   );
 };

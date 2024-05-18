@@ -3,10 +3,21 @@ import {
   SET_SINGLE_PROJECT,
   ADD_TASK,
   DELETE_PROJECT,
+  DELETE_TASK,
 } from "./types";
 
 export const initialState = {
-  projects: [],
+  projects: [
+    {
+      title: "Test Project",
+      startDate: "2024-05-18",
+      endDate: "2024-05-25",
+      id: "07756144-e1cd-4743-ab10-16654d52d644",
+      blurb:
+        "Just trying to make sure I don't have to re-write this every time.",
+      tasks: [{ body: "This is the first task", id: "1234" }],
+    },
+  ],
   singleProject: null,
 };
 
@@ -52,6 +63,23 @@ export const projectReducer = (state, action) => {
       return {
         ...state,
         singleProject: null,
+        projects: updatedProjects,
+      };
+    }
+    case DELETE_TASK: {
+      const updatedProjects = state.projects.map((elem) => {
+        if (elem.id === action.payload.projectId) {
+          const updatedTasks = elem.tasks.filter((elem) => {
+            return elem.id !== action.payload.id;
+          });
+          elem.tasks = updatedTasks;
+          return elem;
+        } else {
+          return elem;
+        }
+      });
+      return {
+        ...state,
         projects: updatedProjects,
       };
     }

@@ -1,16 +1,22 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import ProjectContext from "../context/ProjectContext";
 import Task from "../models/taskClass";
 
 const TaskInput = ({ id }) => {
   const { addTask } = useContext(ProjectContext);
 
+  const [title, setTitle] = useState("");
+
+  const handleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formObj = new FormData(e.target);
-    const title = formObj.get("title");
+
     const newTask = new Task(title);
     addTask(newTask, id);
+    setTitle("");
   };
   return (
     <form onSubmit={handleSubmit} className="formControl verticalFlexContainer">
@@ -23,6 +29,8 @@ const TaskInput = ({ id }) => {
           type="text"
           id="title"
           name="title"
+          value={title}
+          onChange={handleChange}
           className="label-wrapper__input"
         />
         <button type="submit" className="submitButton">

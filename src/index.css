@@ -191,7 +191,7 @@
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
-  border: 1px solid red;
+
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -233,4 +233,15 @@
 
 .projectContainer {
   width: 35%;
+}
+
+.taskItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }

@@ -5,6 +5,7 @@ import {
   SET_SINGLE_PROJECT,
   ADD_TASK,
   DELETE_PROJECT,
+  DELETE_TASK,
 } from "./types";
 
 const ProjectContext = createContext();
@@ -50,6 +51,16 @@ export const ProjectProvider = ({ children }) => {
     });
   };
 
+  const deleteTask = (id, projectId) => {
+    dispatch({
+      type: DELETE_TASK,
+      payload: {
+        id,
+        projectId,
+      },
+    });
+  };
+
   return (
     <ProjectContext.Provider
       value={{
@@ -57,6 +68,7 @@ export const ProjectProvider = ({ children }) => {
         addTask,
         deleteProject,
         setSingleProject,
+        deleteTask,
         singleProject: state.singleProject,
         projects: state.projects,
       }}
