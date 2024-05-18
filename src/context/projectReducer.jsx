@@ -4,20 +4,11 @@ import {
   ADD_TASK,
   DELETE_PROJECT,
   DELETE_TASK,
+  SHOW_NEW_PROJECT_FORM,
 } from "./types";
 
 export const initialState = {
-  projects: [
-    {
-      title: "Test Project",
-      startDate: "2024-05-18",
-      endDate: "2024-05-25",
-      id: "07756144-e1cd-4743-ab10-16654d52d644",
-      blurb:
-        "Just trying to make sure I don't have to re-write this every time.",
-      tasks: [{ body: "This is the first task", id: "1234" }],
-    },
-  ],
+  projects: [],
   singleProject: null,
 };
 
@@ -55,11 +46,13 @@ export const projectReducer = (state, action) => {
       };
     }
     case DELETE_PROJECT: {
+      console.log(action.payload.id);
       const updatedProjects = state.projects.filter((elem) => {
-        if (elem.id == action.payload.id) {
+        if (elem.id !== action.payload.id) {
           return elem;
         }
       });
+      console.log(updatedProjects);
       return {
         ...state,
         singleProject: null,
@@ -81,6 +74,12 @@ export const projectReducer = (state, action) => {
       return {
         ...state,
         projects: updatedProjects,
+      };
+    }
+    case SHOW_NEW_PROJECT_FORM: {
+      return {
+        ...state,
+        singleProject: null,
       };
     }
   }

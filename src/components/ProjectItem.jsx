@@ -8,7 +8,7 @@ const ProjectItem = ({ title, id }) => {
     setSingleProject(id);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = () => {
     deleteProject(id);
   };
   return (

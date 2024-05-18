@@ -21,9 +21,9 @@ const ProjectInput = () => {
     e.preventDefault(); // Prevent the default form submission behavior
 
     // Log the values
-    console.log({ title, startDate, endDate, blurb });
+
     const newProject = new Project(title, startDate, endDate, blurb);
-    console.log(newProject);
+
     addProject(newProject);
     clearFields();
   };
@@ -36,6 +36,7 @@ const ProjectInput = () => {
           Title
         </label>
         <input
+          required
           type="text"
           id="title"
           name="title"
@@ -49,6 +50,7 @@ const ProjectInput = () => {
           Start Date
         </label>
         <input
+          required
           type="date"
           id="startDate"
           name="startDate"
@@ -62,6 +64,7 @@ const ProjectInput = () => {
           End Date
         </label>
         <input
+          required
           type="date"
           id="endDate"
           name="endDate"
@@ -75,6 +78,7 @@ const ProjectInput = () => {
           Blurb
         </label>
         <textarea
+          required
           id="blurb"
           name="blurb"
           rows="4"

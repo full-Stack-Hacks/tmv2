@@ -6,6 +6,7 @@ import {
   ADD_TASK,
   DELETE_PROJECT,
   DELETE_TASK,
+  SHOW_NEW_PROJECT_FORM,
 } from "./types";
 
 const ProjectContext = createContext();
@@ -61,6 +62,12 @@ export const ProjectProvider = ({ children }) => {
     });
   };
 
+  const showNewProjectForm = () => {
+    dispatch({
+      type: SHOW_NEW_PROJECT_FORM,
+    });
+  };
+
   return (
     <ProjectContext.Provider
       value={{
@@ -69,6 +76,7 @@ export const ProjectProvider = ({ children }) => {
         deleteProject,
         setSingleProject,
         deleteTask,
+        showNewProjectForm,
         singleProject: state.singleProject,
         projects: state.projects,
       }}

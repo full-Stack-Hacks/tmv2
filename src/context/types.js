@@ -3,3 +3,4 @@ export const SET_SINGLE_PROJECT = "setSingleProject";
 export const ADD_TASK = "addTask";
 export const DELETE_PROJECT = "deleteProject";
 export const DELETE_TASK = "deleteTask";
+export const SHOW_NEW_PROJECT_FORM = "showNewProjectForm";
