@@ -17,10 +17,24 @@
   margin: 5rem auto;
 }
 
-.evenSpacedFlexContainer {
+.spaceAround {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.spaceEvenly {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  gap: 5rem;
+}
+
+.spaceBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .verticalFlexContainer {
@@ -31,7 +45,7 @@
 .titleMedium {
   font-size: 2rem;
   font-weight: bold;
-  border-bottom: 1px solid black;
+
   margin-bottom: 1rem;
 }
 
@@ -112,7 +126,7 @@
 }
 
 .formControl {
-  max-width: 400px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -173,10 +187,11 @@
 }
 
 .singleProject {
-  max-width: 400px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
+  border: 1px solid red;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -202,4 +217,20 @@
 .singleProject .dates p {
   font-size: 16px;
   margin-bottom: 10px;
+}
+
+.btn {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--black);
+  border-radius: 5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.projectContainer {
+  width: 35%;
 }

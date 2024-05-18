@@ -6,7 +6,7 @@ import { ProjectProvider } from "./context/ProjectContext";
 function App() {
   return (
     <ProjectProvider>
-      <div className="evenSpacedFlexContainer outterContainer">
+      <div className="spaceEvenly outterContainer">
         <Projects />
         <DashBoard />
       </div>

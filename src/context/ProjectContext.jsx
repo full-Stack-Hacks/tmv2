@@ -1,6 +1,11 @@
 import { createContext, useReducer } from "react";
 import { initialState, projectReducer } from "./projectReducer";
-import SingleProject from "../components/SingleProject";
+import {
+  ADD_PROJECT,
+  SET_SINGLE_PROJECT,
+  ADD_TASK,
+  DELETE_PROJECT,
+} from "./types";
 
 const ProjectContext = createContext();
 
@@ -9,7 +14,7 @@ export const ProjectProvider = ({ children }) => {
 
   const addProject = (newProject) => {
     dispatch({
-      type: "addProject",
+      type: ADD_PROJECT,
       payload: {
         newProject,
       },
@@ -18,19 +23,28 @@ export const ProjectProvider = ({ children }) => {
 
   const setSingleProject = (id) => {
     dispatch({
-      type: "setSingleProject",
+      type: SET_SINGLE_PROJECT,
       payload: {
         id,
       },
     });
   };
 
-  const addTask = (title, id) => {
+  const addTask = (newTask, id) => {
     console.log("context");
     dispatch({
-      type: "addTask",
+      type: ADD_TASK,
       payload: {
-        title,
+        newTask,
+        id,
+      },
+    });
+  };
+
+  const deleteProject = (id) => {
+    dispatch({
+      type: DELETE_PROJECT,
+      payload: {
         id,
       },
     });
@@ -41,6 +55,7 @@ export const ProjectProvider = ({ children }) => {
       value={{
         addProject,
         addTask,
+        deleteProject,
         setSingleProject,
         singleProject: state.singleProject,
         projects: state.projects,

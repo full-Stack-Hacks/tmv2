@@ -1,24 +1,31 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Project from "../models/projectClass";
 import ProjectContext from "../context/ProjectContext";
 
 const ProjectInput = () => {
   const { addProject, singleProject } = useContext(ProjectContext);
 
+  const [title, setTitle] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [blurb, setBlurb] = useState("");
+
+  const clearFields = () => {
+    setTitle("");
+    setStartDate("");
+    setEndDate("");
+    setBlurb("");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
-    const formData = new FormData(e.target); // Create a FormData object from the form
-
-    // Extract the values using FormData's get method
-    const title = formData.get("title");
-    const startDate = formData.get("startDate");
-    const endDate = formData.get("endDate");
-    const blurb = formData.get("blurb");
 
     // Log the values
     console.log({ title, startDate, endDate, blurb });
     const newProject = new Project(title, startDate, endDate, blurb);
+    console.log(newProject);
     addProject(newProject);
+    clearFields();
   };
 
   return (
@@ -33,6 +40,8 @@ const ProjectInput = () => {
           id="title"
           name="title"
           className="label-wrapper__input"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
       <div className="label-wrapper">
@@ -41,9 +50,11 @@ const ProjectInput = () => {
         </label>
         <input
           type="date"
-          //   id="startDate"
+          id="startDate"
           name="startDate"
           className="label-wrapper__input"
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
         />
       </div>
       <div className="label-wrapper">
@@ -55,6 +66,8 @@ const ProjectInput = () => {
           id="endDate"
           name="endDate"
           className="label-wrapper__input"
+          value={endDate}
+          onChange={(e) => setEndDate(e.target.value)}
         />
       </div>
       <div className="label-wrapper">
@@ -68,6 +81,8 @@ const ProjectInput = () => {
           cols="50"
           placeholder="Enter your blurb here"
           className="label-wrapper__input"
+          value={blurb}
+          onChange={(e) => setBlurb(e.target.value)}
         ></textarea>
       </div>
       <button type="submit" className="submitButton">

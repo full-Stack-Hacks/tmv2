@@ -11,8 +11,11 @@ const Projects = () => {
   });
 
   return (
-    <div className="verticalFlexContainer alignStart">
-      <h1 className="titleMedium">Projects</h1>
+    <div className="projectContainer">
+      <div className="spaceBetween">
+        <h1 className="titleMedium">Projects</h1>
+        <div className="btn">new project</div>
+      </div>
 
       {projectList}
     </div>
